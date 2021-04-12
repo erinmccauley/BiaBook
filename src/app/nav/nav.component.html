@@ -7,14 +7,14 @@
               <div class="collapse navbar-collapse" id="navbarResponsive" [collapse]="isCollapsed">
                 <ul class="navbar-nav mx-auto">
                   <li class="nav-item active">
-                    <a class="nav-link py-2" href="./recipelist">RECIPES</a>
+                    <a class="nav-link py-2" [routerLink]="['/recipelist']">RECIPES</a>
                   </li>
                   <li class="nav-item"  *ngIf="accountService.isLoggedIn()">
-                    <a class="nav-link py-2" href="./create-recipe">CREATE RECIPE</a>
+                    <a class="nav-link py-2" [routerLink]="['/create-recipe']">CREATE RECIPE</a>
                   </li>
                   <a *ngIf="currentWindowWidth > 991" class="navbar-brand" href="#"><img src="../../assets/img/BiaBook.png"></a>
                   <li class="nav-item" *ngIf="accountService.isLoggedIn()">
-                    <a class="nav-link py-2" href="./favourites">MY FAVOURITES</a>
+                    <a class="nav-link py-2" [routerLink]="['/favourites']">MY FAVOURITES</a>
                   </li>
                   <li class="nav-item" *ngIf="!accountService.isLoggedIn()">
                     <a class="nav-link py-2" [routerLink]="['/login']" tabindex="-1" aria-disabled="true">LOGIN/SIGN UP</a>

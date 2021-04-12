@@ -17,14 +17,9 @@ if(isset($postdata) && !empty($postdata))
     $recipeId = mysqli_real_escape_string($conn, trim($request->recipeId));
 
     $sql = "INSERT INTO `UserFavourites`(`UserId`, `RecipeID`) VALUES ($userId,$recipeId)";
-    echo $sql;
     if ($conn->query($sql) === TRUE) {
 
-        $userFavourite = [
-        'recipeId' => $recipeId,
-        'user' => $user
-        ];
-        echo json_encode($userFavourite);
+        http_response_code(201);
         }
         }
         

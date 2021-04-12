@@ -51,10 +51,10 @@
     </div>
     <div class="col-12 col-sm-10 col-md-6 col-lg-4 col-xl-4">      
       <div *ngIf="!isFavourited">
-        <a (click)="favouriteRecipe()" *ngIf="isLoggednIn"  class="btn next"> 
+        <a (click)="favouriteRecipe()" *ngIf="isLoggedIn"  class="btn next"> 
           Favourite <fa-icon [icon] = "faRegHeart" class = "faIcon"></fa-icon>  </a>
 
-          <a (click)="favouriteRecipeNotLoggedIn()" *ngIf="!isLoggednIn"  class="btn next"> 
+          <a (click)="favouriteRecipeNotLoggedIn()" *ngIf="isLoggedIn == false"  class="btn next"> 
             Favourite <fa-icon [icon] = "faRegHeart" class = "faIcon"></fa-icon>  </a>
       </div>
 

@@ -25,7 +25,7 @@ export class RecipedetailsComponent implements OnInit {
   faRegHeart = faRegHeart;
   isFavourited: boolean;
   reviews: Review[] = [];
-  isLoggedIn: boolean;
+  isLoggedIn: boolean = false;
   user = sessionStorage.getItem('token');
   userId: any;
 
@@ -34,13 +34,12 @@ export class RecipedetailsComponent implements OnInit {
     private reviewService: ReviewsService, private accountService: AccountService) {
     route.params.subscribe(val => {
       this.getRecipe();
-      this.isUserLoggedIn();
       
     })
   }
 
   ngOnInit() {
-    
+    this.isUserLoggedIn();    
   }
 
   async getRecipe() {
@@ -55,6 +54,7 @@ export class RecipedetailsComponent implements OnInit {
     this.getRecipeAuthor();
     this.getReviews();
     this.userId = await this.accountService.getIdByUsername(this.user);
+    
     this.getIsFavourited();
   }
 
@@ -86,6 +86,7 @@ export class RecipedetailsComponent implements OnInit {
 
   isUserLoggedIn() {
     this.isLoggedIn = this.accountService.isLoggedIn();
+    console.log(this.isLoggedIn);
   }
 
   async getPreviousRecipe(): Promise<void> {
