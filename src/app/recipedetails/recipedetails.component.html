@@ -1,0 +1,123 @@
+<h2>.</h2>
+<div class="container">
+  <div class="row header-row">
+    <div>
+      <h4>{{recipe[0]?.Name}}</h4>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12 col-sm-10 col-md-5 col-lg-4 col-xl-4">
+      <img class="img img-fluid" src={{recipe[0]?.Images[0]}} alt="">
+      <div>
+        {{recipe[0]?.Description}}
+      </div>
+      <h5>
+        Nutritional Information per serving
+      </h5>
+      <hr />
+      <div><b>Calories: </b>{{recipe[0]?.Calories}} kcals</div>
+      <div><b>Fat Content: </b> {{recipe[0]?.FatContent}} g</div>
+      <div><b>Saturated Fat: </b>{{recipe[0]?.SaturatedFatContent}} g</div>
+      <div><b>Sodium Content: </b> {{recipe[0]?.SodiumContent}} mg</div>
+      <div><b>Carbohydrate Content: </b> {{recipe[0]?.CarbohydrateContent}} g</div>
+      <div><b>Fibre Content: </b> {{recipe[0]?.FibreContent}} g</div>
+      <div><b>Sugar Content: </b>{{recipe[0]?.SugarContent}} g</div>
+      <div><b>Protein Content: </b> {{recipe[0]?.ProteinContent}} g</div>
+      <a *ngIf="!isLoggedIn" [routerLink]="['/login']" class="btn btn-block ">
+        <div>Want to submit a review?</div>
+        <div> Log in or Sign Up <u>here!</u>
+        </div>
+      </a>
+      <a *ngIf="isLoggedIn" [routerLink]="['/create-review/',recipe[0].RecipeId]" class="btn btn-block ">
+        <div>Click here submit a review</div>
+      </a>
+      <h5>
+        Recipe Reviews:
+      </h5>
+      <hr />
+      <div *ngIf="reviews.length > 0">
+        <div *ngFor="let review of reviews">
+          <app-starrating [rating]='review.Rating'> </app-starrating>
+          <div class="last mod"><b>Last Modified: </b> {{review.DateModified}}</div>
+          <h6>{{review.Review}}</h6>
+          <hr/>
+        </div>
+      </div>
+      <div *ngIf ="reviews.length===0">
+        <div>Be the first to write a review for this recipe by clicking 
+          <a href="" [routerLink]="['/create-review/',recipe[0].RecipeId]" class="reviewlink">here!</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-sm-10 col-md-6 col-lg-4 col-xl-4">      
+      <div *ngIf="!isFavourited">
+        <a (click)="favouriteRecipe()" *ngIf="isLoggednIn"  class="btn next"> 
+          Favourite <fa-icon [icon] = "faRegHeart" class = "faIcon"></fa-icon>  </a>
+
+          <a (click)="favouriteRecipeNotLoggedIn()" *ngIf="!isLoggednIn"  class="btn next"> 
+            Favourite <fa-icon [icon] = "faRegHeart" class = "faIcon"></fa-icon>  </a>
+      </div>
+
+      <div *ngIf="isFavourited">
+        <a (click)="unFavouriteRecipe()" class="btn"> 
+          Remove Favourite <fa-icon [icon] = "faHeart" class = "faIcon"></fa-icon>  </a>
+      </div>
+      <app-starrating [rating]='recipe[0].AggregatedRating'> </app-starrating>
+      <div>
+        <h6>
+          <b>Recipe Author: </b>{{recipeAuthor[0]?.username}}
+        </h6>
+      </div>
+      <div>
+        <h6><b>Servings: </b> {{recipe[0]?.RecipeServings}}</h6>
+      </div>
+      <div>
+        <h6><b>Prep Time = </b> {{recipe[0]?.PrepTime}}</h6>
+      </div>
+      <h6><b>Cooking Time = </b> {{recipe[0]?.CookTime}}
+      </h6>
+      <div>
+      </div>
+      <div>
+        <h6><b>Total Time = </b> {{recipe[0]?.TotalTime}}</h6>
+      </div>
+      <div class="row">
+        <div class="col-1">
+          <h5>Ingredients</h5>
+        </div>
+      </div>
+      <hr />
+      <div class="row ingredients">
+        <div class="col-3">
+          <div *ngFor="let ingredientQuantities of recipe[0]?.RecipeIngredientQuantities">
+            <input type="checkbox" class="form-check-input" id="Check"><label
+              class="quant">{{ingredientQuantities}}</label>
+          </div>
+        </div>
+        <div class="col-6">
+          <div *ngFor="let ingredientPart of recipe[0]?.RecipeIngredientParts"><label class="ingred">{{ingredientPart}}
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 col-sm-10 col-md-6 col-lg-3 col-xl-3"></div>
+        <div class="instructions">
+          <h5>Instructions</h5>
+          <hr />
+          <div *ngFor="let recipeInstructions of recipe[0]?.RecipeInstructions">
+            <p>{{recipeInstructions}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-sm-10 col-md-4 col-lg-4 col-xl-4 col-others">
+      <a href="#" [routerLink]="['/recipe/',previousRecipe[0]?.RecipeId]" class="btn"> Previous Recipe </a>
+      <a href="#" [routerLink]="['/recipe/',nextRecipe[0]?.RecipeId]" class="btn next"> Next Recipe </a>
+      <h5 class="recommend">
+        Recommended For You
+        <img class="img" src="../../assets/img/recommendations.png">
+      </h5>
+      <hr />
+      <app-recommendation [recipe]='recipe'></app-recommendation>
+    </div>

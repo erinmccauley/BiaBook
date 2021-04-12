@@ -1,0 +1,21 @@
+<div class="page">
+  <h2 class="banner">.</h2>
+  <form class="reviewform">
+    <h2 class="reviewtitle">WRITE A REVIEW</h2>
+      <form action="#!" [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label for="rating" class="h4">Select recipe rating</label>
+          <select class="form-control form-rating" formControlName="rating" id="ratingselect">
+            <option>5</option>
+            <option>4</option>
+            <option>3</option>
+            <option>2</option>
+            <option>1</option>
+          </select>
+        </div>
+      <label for="review" class="h4">Review</label> 
+        <textarea class="form-control form-review" id="review" formControlName="review" rows="3" placeholder="Enter your review"></textarea>
+      <button class="btn btn-block btn-outline-dark" type="submit">SUBMIT</button>
+      </form>
+    </form>
+</div>

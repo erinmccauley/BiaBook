@@ -1,0 +1,23 @@
+<div class="container">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Recipe Id</th>
+        <th scope="col">Recipe Name</th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let recipe of recipes; let i = index; trackBy: trackByFn">
+        <td>{{recipe.RecipeId}}</td>
+        <td>{{recipe.Name}}</td>
+        <td><a href="#" [routerLink]="['/recipe/',recipe.RecipeId]" class="btn text-uppercase"> View
+            Recipe </a></td>
+        <td><a (click)="deleteRecipe(recipe.RecipeId, recipe.Name)" class="btn text-uppercase"> Delete
+            Recipe </a></td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>

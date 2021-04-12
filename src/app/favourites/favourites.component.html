@@ -1,0 +1,37 @@
+<!--<div *ngIf="error">{{error}}</div>
+<div *ngIf="success">{{success}}</div>-->
+    
+<div class=container-fluid id="theList">
+  <h2>MY FAVOURITES</h2>
+  <div class="wrapper rounded bg-white">
+      <form class="form-inline">
+              <input class="form-control" type="search" placeholder="Search Recipes" aria-label="Search">
+            </form>
+    <div class="d-flex align-items-center justify-content-end px-sm-3 pt-3 px-1">
+        <div class="text-muted">Items per page (<b>53 items</b>)</div> <select name="num" id="num" class="px-2 py-1 ml-sm-2 ml-1">
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+            <option value="13">13</option>
+            <option value="14">14</option>
+            <option value="15">15</option>
+        </select> <select name="sort" id="sort" class="px-1 py-1 ml-2">
+            <option value="" selected hidden>Sort by</option>
+            <option value="rating">Rating</option>
+            <option value="popular">Popular</option>
+            <option value="featured">DatePublished</option>
+        </select>
+    </div>
+      <div> 
+      <div class="row px-sm-2 px-0 pt-3">
+        <div *ngFor="let recipe of recipes; let i = index; trackBy: trackByFn" class="col-md-4">
+            <div class="card justify-content-center">
+                    <img class="img" src={{recipe.Images[0]}} alt="">
+                    <div class="card-body">
+                        <h5 class="card-title">{{recipe.Name}}</h5>
+                        <p class ="card-text">
+                            <app-starrating [rating] = 'recipe.AggregatedRating'> </app-starrating>
+                        <a href="#" [routerLink]="['/recipe/',recipe.RecipeId]" class="btn text-uppercase"> View Recipe </a>
+                        <a href="#" [routerLink]="['/favourites']" (click)="unFavouriteRecipe(recipe.RecipeId)"  class="btn"> <fa-icon [icon] = "faHeart" class = "faIcon"></fa-icon>  </a>
+                </div>
+        </div>

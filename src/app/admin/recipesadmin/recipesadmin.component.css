@@ -1,0 +1,27 @@
+
+.btn{
+    background-color:#6b705c;
+    color:#fff;
+    font-family: 'Roboto Slab', serif;
+    font-weight: 2em;
+    margin-right:20px;
+    margin-bottom:10px;
+    border-radius: 20px;
+}
+
+.btn:hover{
+    background-color:#fff;
+    color:#6b705c;
+    font-family: 'Roboto Slab', serif;
+    font-weight: 2em;
+    margin-right:20px;
+    margin-bottom:10px;
+    border-radius: 20px;
+}
+
+.btn-block{
+    border-radius: 20px;
+    width:80%;
+    position:center;
+    margin-top:20px;
+}

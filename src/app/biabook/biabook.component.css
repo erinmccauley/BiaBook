@@ -1,0 +1,153 @@
+.page{
+    background: url(https://images.unsplash.com/reserve/EnF7DhHROS8OMEp2pCkx_Dufer%20food%20overhead%20hig%20res.jpg?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1357&q=80);
+    height:900px;
+    position:center;
+    background-size:cover;
+    margin-top: 0%;
+}
+
+
+
+h2{
+    background-color: #6b705c;
+    color: #6b705c;
+    margin:0em!important;
+}
+
+.title{
+    color:#fff!important;
+    font-family: 'Roboto Slab', serif;
+    margin-bottom:2%;
+    margin-right:5%;
+    padding-top:2%;
+    background-color:none;
+    text-align: center;
+}
+
+
+.keywords{
+    margin-top:2%;
+    font-family: 'Roboto Slab', serif;
+}
+
+.search{
+    margin-top: 5%;
+    background-color: #6b705c;
+    border-radius:5px;
+    padding-top:2%;
+    padding-bottom:3%;
+    padding-left:8%;
+    
+}
+
+
+.btn-search{
+    padding:3%;
+    font-family: 'Roboto Slab', serif;
+}
+
+.btn-secondary,
+    .btn-secondary:focus,
+    .btn-secondary:active {
+        color: #fff;
+        background-color: #686868 !important;
+        border-color: #fff !important;
+        font-size: 1em;
+        margin:1em;
+        font-family: 'Roboto Slab', serif;
+        
+    }
+
+
+.advanced {
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    font-family: 'Roboto Slab', serif;
+    color: #fff !important;
+    background:black;
+    border:1px solid #fff!important;
+        border-radius:5%;
+        margin:2%;
+        padding:1%;
+}
+
+
+.form-control:focus {
+    border: 1px solid #6b705c;
+    font-size: 15px;
+    padding:5%;
+    margin:7%,5%,5%,5%;
+    font-family: 'Roboto Slab', serif;
+}
+
+@media only screen and (max-width: 768px) and (min-width:600px){
+
+.btn{
+   margin-left:0%; 
+}
+
+.keywords{
+    margin-left:4%;
+    padding:0%;
+}
+
+.advanced{
+    border:#fff!important;
+}
+
+}
+
+@media only screen and (max-width: 600px) {
+    .container{
+        max-width:100%;
+    }
+    
+    .search{
+        margin-top: 10%;
+        background-color: #6b705c;
+        border-radius:1%;
+        padding-top:1%;
+        padding-bottom:2%; 
+        padding-left:5%;  
+    }
+
+    .keywords{
+        width:90%;
+        margin-left:3%;
+        margin-top:2%;
+        font-family: 'Roboto Slab', serif;
+    }
+
+    .advanced {
+        text-decoration: none;
+        font-size: 1em;
+        font-weight: 500;
+        color: #fff !important;
+        border:1px solid #fff!important;
+        border-radius: 5%;
+        padding:1%;
+        background-color:black;
+        font-family: 'Roboto Slab', serif;
+        margin-right:2%;
+    }
+    
+    .btn-secondary,
+    .btn-secondary:focus,
+    .btn-secondary:active {
+        color: #fff;
+        background-color:#686868 !important;
+        border-color: #fff !important;
+        font-size: 1em;
+        margin:1em;
+        font-family: 'Roboto Slab', serif;   
+    }
+    
+    
+    .form-control:focus {
+        border: 1px solid #6b705c;
+        font-size: 1em;
+        font-family: 'Roboto Slab', serif;
+    }
+
+}

@@ -1,0 +1,143 @@
+<div class="page">
+  <h2 class="banner">.</h2>
+  <form class="recipeform">
+    <h2 class="recipetitle">ADD A RECIPE</h2>
+    <form action="#!" [formGroup]="form" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="recipename" class="h5">Recipe Name</label>
+        <input type="text" id="Name" class="form-control" formControlName="Name" placeholder="Enter a Recipe Name">
+      </div>
+      <div class="row">
+        <div class="form-group col-4">
+          <label for="mealcategory" class="h5">Meal Category</label>
+          <select class="form-control" id="MealCategoryName" formControlName="MealCategory"
+            placeholder="Choose a Meal Category">
+            <option>Breakfast</option>
+            <option>Lunch</option>
+            <option>Dinner</option>
+            <option>Desserts and pastries</option>
+            <option>Soups</option>
+            <option>Appetizers</option>
+            <option>Drinks</option>
+            <option>Snacks</option>
+          </select>
+        </div>
+        <div class="form-group col-4">
+          <label for="dietaryrequirements" class="h5">Dietary Requirements</label>
+          <select class="form-control" id="DietaryRequirementName" formControlName="DietaryRequirementName"
+            placeholder="Choose a Dietary Requirement">
+            <option>Vegetarian</option>
+            <option>Vegan</option>
+            <option>Low Carb</option>
+            <option>Sugar-Free</option>
+            <option>Lactose-Free</option>
+            <option>Gluten-Free</option>
+            <option>None</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="recipecategory" class="h5">Recipe Category</label>
+        <input type="text" id="RecipeCategory" class="form-control" formControlName="RecipeCategory"
+          placeholder="Enter a Recipe Category e.g. Breads, Pasta, Pies">
+      </div>
+      <div class="form-group">
+        <label for="description" class="h5">Description</label>
+        <textarea class="form-control descrip" id="description" formControlName="Description" rows="5"
+          placeholder="  Enter a description for your recipe"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="keywords" class="h5">Keywords</label>
+        <textarea class="form-control" id="Keywords" formControlName="Keywords" rows="3"
+          placeholder="Enter Recipe Keywords separated by a comma e.g. lunch, vegan, avacado"></textarea>
+      </div>
+      <div class="row cook">
+        <div class="form-group">
+          <label for="servings" class="h5">Recipe Servings</label>
+          <input type="number" id="servings" class="form-control" formControlName="RecipeServings" placeholder="0">
+        </div>
+        <div class="form-group">
+          <label for="prepTime" class="h5">Prep Time</label>
+          <input type="text" id="prepTime" class="form-control" formControlName="PrepTime" placeholder="PT10M">
+        </div>
+        <div class="form-group">
+          <label for="cookTime" class="h5">Cook Time</label>
+          <input type="text" id="servings" class="form-control" formControlName="CookTime" placeholder="PT1H">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="instructions" class="h5">Instructions</label>
+        <textarea class="form-control" id="instructions" formControlName="RecipeInstructions" rows="5"
+          placeholder="Enter instructions for your recipe separated by a full stop followed by a comma e.g. Chop the onion up into fine pieces.,bring the water to the boil"></textarea>
+      </div>
+      <div class="form-group">
+        <h5 class="ingred">Ingredients</h5>
+      </div>
+      <div class="form-row ">
+
+        <section formArrayName="RecipeIngredients" *ngFor="let ingredient of RecipeIngredients; let i = index;">
+
+          <div [formGroupName]="i">
+            <div class="row ingred">
+              <div class="col-4">
+                <div class="form-group">
+                  <input type="text" class="form-control" formControlName="RecipeIngredientQuantity"
+                    placeholder="Quantity" />
+                </div>
+              </div>
+              <div class="col-8">
+                <div class="form-group ingredient">
+                  <input type="text" class="form-control" formControlName="RecipeIngredient" placeholder="Ingredient" />
+                  <button type="button" class="btn delete" (click)="deleteIngredient(i)">x</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <button type="button" class="btn btn-primary btn-add mb-2" (click)="addIngredient()">Add Ingredient</button>
+      </div>
+      <div class="row nutrients">
+        <div class="form-group">
+          <label for="calories" class="h6">Calories (kcal)</label>
+          <input type="number" id="Calories" class="form-control" formControlName="Calories" placeholder="0">
+        </div>
+        <div class="form-group">
+          <label for="fat" class="h6">Fat Content(g)</label>
+          <input type="number" id="Fat" class="form-control" formControlName="FatContent" placeholder="0">
+        </div>
+        <div class="form-group">
+          <label for="satfat" class="h6">Saturated Fat Content(g)</label>
+          <input type="number" id="satFat" class="form-control" formControlName="SaturatedFatContent" placeholder="0">
+        </div>
+        <div class="form group">
+          <label for="sodium" class="h6">Sodium Content(mg)</label>
+          <input type="number" id="sodium" class="form-control" formControlName="SodiumContent" placeholder="0">
+        </div>
+      </div>
+      <div class="row nutrients">
+        <div class="form-group">
+          <label for="carb" class="h6">Carbohydrate Content(g)</label>
+          <input type="number" id="carb" class="form-control" formControlName="CarbohydrateContent" placeholder="0">
+        </div>
+        <div class="form-group">
+          <label for="fibre" class="h6">Fibre Content(g)</label>
+          <input type="number" id="fibre" class="form-control" formControlName="FibreContent" placeholder="0">
+        </div>
+        <div class="form-group">
+          <label for="sugar" class="h6">Sugar Content(g)</label>
+          <input type="number" id="sugar" class="form-control" formControlName="SugarContent" placeholder="0">
+        </div>
+        <div class="form-group">
+          <label for="protein" class="h6">Protein Content(g)</label>
+          <input type="number" id="protein" class="form-control" formControlName="ProteinContent" placeholder="0">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="image-url" class="h5">Image link</label>
+        <input type="text" class="form-control url" formControlName="Images" id="image-url"
+          placeholder="Enter image link e.g. http://images.com">
+      </div>
+      <button class="btn btn-block btn-outline-dark" type="submit">SUBMIT</button>
+    </form>
+  </form>
+</div>

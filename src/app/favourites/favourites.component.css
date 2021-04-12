@@ -1,0 +1,158 @@
+* {
+    padding: 0;
+    margin: 1em,0em;
+    box-sizing: border-box
+}
+
+.form-control{
+    margin-left:1em;  
+    border-color: #6b705c;
+    box-shadow: #6b705c!important; 
+    max-width:90%!important;
+}
+
+h2{
+    font-family: 'Roboto Slab', serif;
+    font-weight: 5em;
+    background-color: #6b705c;
+    color:#fff;
+    margin-top:10px;
+    text-align: center;
+}
+.card{
+    height:390px;
+    font-family: 'Karla', sans-serif;
+    font-size: 1em;
+    font-weight:bold!important;
+    color: black;
+    outline: none;
+    border:none;
+    margin-top:10px;
+    margin-right:10px;
+    margin-bottom:20px;
+    margin-left:10px!important;
+}
+
+.card-text {
+    color:#6b705c;
+}
+.wrapper {
+    max-width: 800px;
+    margin: 30px auto;
+}
+
+select {
+    border-radius: 20px;
+    outline: none;
+    border: 1px solid #6b705c;
+    color: #555;
+}
+
+
+.img {
+    object-fit: cover;
+    width:200px!important;
+    height: 200px!important;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+    margin-bottom:10px;
+    margin-left:20px;
+}
+.card-body {
+    text-align: center;
+}
+
+
+.btn {
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 8px 20px;
+    background-color:#6b705c;
+    color:#fff;
+    font-family: 'Roboto Slab', serif;
+}
+
+
+@media(min-width:767px) {
+
+    .form-control {
+        max-width:97%;
+        margin-left:1em;  
+    }
+
+    .row {
+        max-width:97%;
+        margin-left:1em;  
+    }
+
+
+    p.h5 {
+        font-size: 1.35rem;
+        padding-top: 80px;
+    }
+}
+
+
+@media(max-width:767px) {
+    .wrapper {
+        max-width: 500px;
+        margin: 20px auto;
+    }
+
+    .card{
+        max-width:100%;
+    }
+
+}
+
+@media(max-width:541px) {
+
+    .row{
+        max-width:90%;
+        margin-left:1.7em;
+    }
+}
+
+@media(max-width:424px) {
+    .wrapper {
+        width: 100%;
+        margin: auto
+    }
+
+    div.text-muted {
+        font-size: 0.75rem
+    }
+
+    .card{
+        max-width:90%;
+        margin-bottom:5px!important;
+    }
+
+    .row{
+        max-width:90%;
+        margin-left:1.8em;
+    }
+}
+
+@media(max-width:412px) {
+
+    .row{
+        max-width:90%;
+        margin-left:2.3em;
+    }
+}
+
+
+@media(max-width:281px) {
+
+    .row{
+        max-width:90%;
+        margin-left:1.6em;
+    }
+
+    .text-muted{
+        margin-left:1em;
+    }
+}

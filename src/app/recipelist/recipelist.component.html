@@ -1,0 +1,46 @@
+<div class=container-fluid id="theList">
+    <h2>.</h2>
+    <div class="wrapper rounded bg-white">
+        <div class="h2 title">RECIPES</div>
+        <form class="form-inline">
+            <input class="form-control" type="text" placeholder="Search Recipes" aria-label="Search" (keyup)="onKey($event)">
+            <select name="sort" id="sort" class="px-1 py-1 ml-2" [(ngModel)]="orderOption">
+                <option value="" selected hidden>Sort by</option>
+                <option value="rating">Rating</option>
+                <option value="recent">Most Recent</option>
+            </select>
+            <a (click)="search()" class="btn text-uppercase"> Search </a>
+        </form>
+        <div class="d-flex align-items-center justify-content-end px-sm-3 pt-3 px-1">
+            
+        </div>
+        <app-categories (childEvent)="filter($event)"></app-categories>
+        <div *ngIf="recipes.length > 0">
+            <div class="row px-sm-2 px-0 pt-3">
+                <div *ngFor="let recipe of recipes; let i = index; trackBy: trackByFn" class="col-md-4">
+                    <div class="card justify-content-center">
+                        <img class="img" src={{recipe.Images[0]}} alt="">
+                        <div class="card-body">
+                            <h5 class="card-title">{{recipe.Name}}</h5>
+                            <p class="card-text">
+                                <app-starrating [rating]='recipe.AggregatedRating'> </app-starrating>
+                                <a href="#" [routerLink]="['/recipe/',recipe.RecipeId]" class="btn text-uppercase"> View
+                                    Recipe </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div *ngIf="recipes.length === 0">
+            <div class="row message">
+            <div class="messagebox">
+                <div>We are currently cooking up some new recipes for your chosen category!</div>
+            <div>We would love for you to help us!</div>
+            <div>If you would like to add a recipe you can do so</div>
+                <a href="" [routerLink]="['/create-recipe']" class="recipelink">here!</a>
+            </div>
+        </div>
+
+        </div>
+    </div>
+</div>

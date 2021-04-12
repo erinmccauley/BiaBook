@@ -1,0 +1,30 @@
+          <div>
+            <nav class="navbar navbar-expand-lg">
+              <a *ngIf="currentWindowWidth < 992"class="navbar-brand" href="#"><img class="img-fluid" alt="Responsive image" src="../../assets/img/BiaBook.png"></a>
+              <button class="navbar-toggler btn-light" type="button" data-toggle="collapse" (click)="isCollapsed = !isCollapsed" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" [attr.aria-expanded]="!isCollapsed">
+                <fa-icon [icon] = "faBars" class = "faIcon"></fa-icon>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarResponsive" [collapse]="isCollapsed">
+                <ul class="navbar-nav mx-auto">
+                  <li class="nav-item active">
+                    <a class="nav-link py-2" href="./recipelist">RECIPES</a>
+                  </li>
+                  <li class="nav-item"  *ngIf="accountService.isLoggedIn()">
+                    <a class="nav-link py-2" href="./create-recipe">CREATE RECIPE</a>
+                  </li>
+                  <a *ngIf="currentWindowWidth > 991" class="navbar-brand" href="#"><img src="../../assets/img/BiaBook.png"></a>
+                  <li class="nav-item" *ngIf="accountService.isLoggedIn()">
+                    <a class="nav-link py-2" href="./favourites">MY FAVOURITES</a>
+                  </li>
+                  <li class="nav-item" *ngIf="!accountService.isLoggedIn()">
+                    <a class="nav-link py-2" [routerLink]="['/login']" tabindex="-1" aria-disabled="true">LOGIN/SIGN UP</a>
+                  </li>
+                  <li class="nav-item" *ngIf="accountService.isLoggedIn()" >
+                    <a class="nav-link py-2" [routerLink]="['/']" (click)="logout()" tabindex="-1" aria-disabled="true">LOGOUT</a>
+                  </li>
+                </ul>
+              </div>
+            </nav>
+            </div>
+          
+            

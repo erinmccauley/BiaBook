@@ -1,0 +1,31 @@
+<div>
+  <h6>
+    <b>Rating: </b>
+  <div class="stars" *ngIf="rating < 1.1"><fa-icon [icon] = "faStar" class = "faIcon"></fa-icon></div>
+  <div class="stars" *ngIf="rating > 1 && rating < 2.0">
+    <fa-icon [icon] = "faStar" class = "faIcon"></fa-icon>
+  </div>
+  <div class="stars" *ngIf="rating > 1.9 && rating < 3.0">
+    <fa-icon [icon] = "faStar" class = "faIcon"></fa-icon>
+    <fa-icon [icon] = "faStar" class = "faIcon"></fa-icon>
+  </div>
+  <div class="stars" *ngIf="rating > 2.9 && rating < 4.0">
+    <fa-icon [icon] = "faStar" class = "faIcon"></fa-icon>
+    <fa-icon [icon] = "faStar" class = "faIcon"></fa-icon>
+    <fa-icon [icon] = "faStar" class = "faIcon"></fa-icon>
+  </div>
+  <div class="stars" *ngIf="rating > 3.9 && rating < 5.0">
+    <fa-icon [icon] = "faStar" class = "faIcon"></fa-icon>
+    <fa-icon [icon] = "faStar" class = "faIcon"></fa-icon>
+    <fa-icon [icon] = "faStar" class = "faIcon"></fa-icon>
+    <fa-icon [icon] = "faStar" class = "faIcon"></fa-icon>
+  </div>
+  <div class="stars" *ngIf="rating == 5">
+    <fa-icon [icon] = "faStar" class = "faIcon"></fa-icon>
+    <fa-icon [icon] = "faStar" class = "faIcon"></fa-icon>
+    <fa-icon [icon] = "faStar" class = "faIcon"></fa-icon>
+    <fa-icon [icon] = "faStar" class = "faIcon"></fa-icon>
+    <fa-icon [icon] = "faStar" class = "faIcon"></fa-icon>
+  </div>
+</h6>
+</div>

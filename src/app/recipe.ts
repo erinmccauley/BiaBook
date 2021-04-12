@@ -1,0 +1,29 @@
+export class Recipe {
+        RecipeId: number;
+        Name: string;
+        AuthorId: number;
+        CookTime: string;
+        PrepTime: string;
+        TotalTime?: string; 
+        DatePublished: string;
+        Description: string;
+        Images: string[];
+        RecipeCategory: number;
+        Keywords: string;
+        RecipeIngredientQuantities: string[];
+        RecipeIngredientParts: string[];
+        AggregatedRating: number;
+        ReviewCount: number;
+        Calories: number;
+        FatContent: number;
+        SaturatedFatContent: number;
+        CholesterolContent: number;
+        SodiumContent: number;
+        CarbohydrateContent: number;
+        FibreContent: number;
+        SugarContent: number;
+        ProteinContent: number;
+        RecipeServings: number;
+        RecipeYield?: string;
+        RecipeInstructions: string[];
+}

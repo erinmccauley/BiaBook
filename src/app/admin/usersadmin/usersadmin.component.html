@@ -1,0 +1,22 @@
+<div class="container">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">User Id</th>
+        <th scope="col">Username</th>
+        <th scope="col">Email</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users; let i = index; trackBy: trackByFn">
+        <td>{{user.Id}}</td>
+        <td>{{user.Username}}</td>
+        <td>{{user.Email}}</td>
+        <td><a (click)="deleteRecipe(user.Id, user.Username)" class="btn text-uppercase"> Delete
+            user </a></td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>

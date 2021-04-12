@@ -1,0 +1,23 @@
+<!--<div *ngFor="let recipe of recipes; let i = index; trackBy: trackByFn" class="col-md-4">
+  <div class="card justify-content-center">
+          <img class="img" src={{recipe.Images[0]}} alt="">
+          <div class="card-body">
+              <h5 class="card-title">{{recipe.Name}}</h5>
+              <p class ="card-text">
+              <b>Reviews : </b>{{recipe.ReviewCount}} </p>
+              <a href="#" [routerLink]="['/recipe/',recipe.RecipeId]" class="btn text-uppercase"> View Recipe </a>
+      </div>
+</div>
+
+<p *ngFor="let recipe of recommendedRecipes | slice:0:5; let i=index">{{recipe.Name}}</p>-->
+
+
+<div *ngFor="let recipe of recommendedRecipes | slice:0:5; let i=index" class="col-md-12">
+  <div class="card justify-content-center">
+          <img class="img" src={{recipe.Images[0]}} alt="">
+          <div class="card-body">
+              <h6 class="card-title">{{recipe.Name}}</h6>
+              <p class ="card-text">
+                <app-starrating [rating] = 'recipe.AggregatedRating'> </app-starrating>
+              <a href="#" [routerLink]="['/recipe/',recipe.RecipeId]" class="btn text-uppercase"> View Recipe </a>
+      </div>
